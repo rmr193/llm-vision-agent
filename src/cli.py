@@ -9,8 +9,8 @@ Runs the perceive -> reason -> act loop:
   5. Repeat until the LLM reports "done" or MAX_AGENT_STEPS is hit.
 
 Usage:
-    python -m src.app "Open the calculator app and compute 42 * 17"
-    python -m src.app --dry-run "Click the Settings gear icon"
+    python -m src.cli "Open the calculator app and compute 42 * 17"
+    python -m src.cli --dry-run "Click the Settings gear icon"
 """
 from __future__ import annotations
 

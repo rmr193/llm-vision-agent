@@ -14,7 +14,7 @@ from flask import Flask, jsonify, request
 from flask_socketio import SocketIO
 from loguru import logger
 
-from src.app import run_agent_loop
+from src.cli import run_agent_loop
 from src.config import WEB
 
 app = Flask(__name__)
