@@ -14,7 +14,6 @@ from flask import Flask, jsonify, request
 from flask_socketio import SocketIO
 from loguru import logger
 
-from src.cli import run_agent_loop
 from src.config import WEB
 
 app = Flask(__name__)
@@ -101,6 +100,7 @@ def _background_run(goal: str):
         socketio.sleep(0)
 
     try:
+        from src.cli import run_agent_loop
         run_agent_loop(goal=goal, dry_run=False, on_step=on_step)
     except StopIteration:
         logger.info("Agent run stopped by user request.")
