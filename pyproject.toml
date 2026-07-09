@@ -1,2 +1,27 @@
+[project]
+name = "llm-vision-agent"
+version = "0.1.0"
+description = "ScreenSage local vision+LLM agent"
+dependencies = [
+    "numpy>=1.26,<2.0",
+    "Pillow>=10.3",
+    "python-dotenv>=1.0",
+    "pydantic>=2.7",
+    "loguru>=0.7",
+    "mss>=9.0.1",
+    "opencv-python-headless>=4.10",
+    "ultralytics>=8.3",
+    "openai>=1.30",
+    "pyautogui>=0.9.54",
+    "pynput>=1.7.7",
+    "flask>=3.0",
+    "flask-socketio>=5.3",
+    "eventlet>=0.36"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [tool.vercel]
 entrypoint = "src.web_ui:app"
