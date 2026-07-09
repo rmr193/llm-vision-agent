@@ -1,9 +1,0 @@
-[project]
-name = "llm-vision-agent"
-version = "0.1.0"
-description = "LLM Vision Agent"
-requires-python = ">=3.11"
-
-
-[tool.vercel]
-entrypoint = "src.web_ui:app"
