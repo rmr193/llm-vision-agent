@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  screensage:
+    build:
+      context: .
+      platforms:
+        - linux/amd64
+    image: screensage:latest
+    platform: linux/amd64
+    ports:
+      - "7860:7860"
+    devices:
+      - /dev/kfd
+      - /dev/dri
+    group_add:
+      - video
+    ipc: host
+    shm_size: "8gb"
+    environment:
+      - HIP_VISIBLE_DEVICES=0
+      - ROCR_VISIBLE_DEVICES=0
+      - LLM_MODEL=Qwen/Qwen2.5-7B-Instruct
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:7860/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 55s

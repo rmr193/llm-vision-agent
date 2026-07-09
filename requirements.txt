@@ -1,0 +1,29 @@
+# --- Core ---
+numpy>=1.26,<2.0
+Pillow>=10.3
+python-dotenv>=1.0
+pydantic>=2.7
+loguru>=0.7
+
+# --- Vision ---
+mss>=9.0.1                 # fast cross-platform screen capture
+opencv-python-headless>=4.10
+ultralytics>=8.3            # YOLOv10 / YOLOv8 model zoo + training/inference utils
+
+# --- LLM serving / client ---
+# NOTE: torch + vllm are installed separately via scripts/setup_rocm.sh
+# using AMD's ROCm wheel index, since PyPI's default wheels are CUDA-only.
+openai>=1.30                 # used only as an HTTP client for vLLM's OpenAI-compatible API
+
+# --- Control ---
+pyautogui>=0.9.54
+pynput>=1.7.7
+
+# --- Web dashboard ---
+flask>=3.0
+flask-socketio>=5.3
+eventlet>=0.36
+
+# --- Dev / test ---
+pytest>=8.2
+pytest-mock>=3.14
